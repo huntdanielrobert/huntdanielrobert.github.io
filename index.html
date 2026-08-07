@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Notebooks & Projects</title>
+<style>
+  :root {
+    --paper: #FBFAF6;
+    --paper-dim: #F2F0E9;
+    --ink: #1B2430;
+    --ink-soft: #4A5568;
+    --rule: #DAD6C9;
+    --in-color: #2B6CB0;
+    --out-color: #B5502E;
+    --accent: #0B7285;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+    line-height: 1.6;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  /* Top bar mimics a notebook toolbar */
+  .toolbar {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--rule);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .toolbar .file {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Each "cell" */
+  .cell {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    margin-bottom: 6px;
+  }
+
+  .prompt {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 13px;
+    text-align: right;
+    padding-top: 18px;
+    white-space: nowrap;
+  }
+
+  .prompt.in { color: var(--in-color); }
+  .prompt.out { color: var(--out-color); }
+
+  .cell-body {
+    background: var(--paper-dim);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 8px 0 28px;
+  }
+
+  .cell-body.markdown {
+    background: transparent;
+    border: none;
+    padding: 4px 0 8px;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .tagline {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    color: var(--accent);
+    font-size: 15px;
+    margin: 0 0 4px;
+  }
+
+  h2 {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  .bio { color: var(--ink-soft); }
+
+  /* Project list styled like notebook output */
+  .project {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .project:last-child { border-bottom: none; }
+
+  .project-name {
+    font-weight: 600;
+  }
+
+  .project-desc {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin-top: 2px;
+  }
+
+  .project a {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .project a:hover { text-decoration: underline; }
+
+  .contact-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 14px;
+  }
+
+  .contact-links a {
+    color: var(--in-color);
+    text-decoration: none;
+  }
+  .contact-links a:hover { text-decoration: underline; }
+
+  footer {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 12px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 560px) {
+    .cell { grid-template-columns: 56px 1fr; gap: 10px; }
+    .prompt { font-size: 11px; padding-top: 16px; }
+    h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="file">portfolio.ipynb</span>
+  <span>Python 3 (ipykernel)</span>
+</div>
+
+<div class="wrap">
+
+  <!-- Hero / intro as a markdown cell -->
+  <div class="cell">
+    <div class="prompt">&nbsp;</div>
+    <div class="cell-body markdown">
+      <p class="tagline"># about_me.md</p>
+      <h1>Your Name</h1>
+      <p class="bio">Data-curious builder who likes turning messy questions into
+        working code. This page collects the notebooks and projects I've been
+        exploring lately — click through to read, run, or fork any of them.</p>
+    </div>
+  </div>
+
+  <!-- Projects as an executed cell with output -->
+  <div class="cell">
+    <div class="prompt in">In&nbsp;[1]:</div>
+    <div class="cell-body">
+      <h2>list_projects()</h2>
+      <p class="bio">A running index of notebooks and repos. Update the links below
+        to point at your own GitHub Pages / nbviewer URLs.</p>
+    </div>
+  </div>
+
+  <div class="cell">
+    <div class="prompt out">Out[1]:</div>
+    <div class="cell-body">
+      <div class="project">
+        <div>
+          <div class="project-name">Exploring Housing Price Trends</div>
+          <div class="project-desc">Regression analysis on regional housing data, 2015–2025.</div>
+        </div>
+        <a href="#" target="_blank">view notebook →</a>
+      </div>
+      <div class="project">
+        <div>
+          <div class="project-name">NBA Shot Chart Visualizer</div>
+          <div class="project-desc">Interactive shot-chart plots built with matplotlib + pandas.</div>
+        </div>
+        <a href="#" target="_blank">view notebook →</a>
+      </div>
+      <div class="project">
+        <div>
+          <div class="project-name">Text Classification Baseline</div>
+          <div class="project-desc">Simple bag-of-words classifier as a teaching example.</div>
+        </div>
+        <a href="#" target="_blank">view notebook →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="cell">
+    <div class="prompt in">In&nbsp;[2]:</div>
+    <div class="cell-body">
+      <h2>get_in_touch()</h2>
+      <div class="contact-links">
+        <a href="mailto:you@example.com">email</a>
+        <a href="https://github.com/yourusername" target="_blank">github</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>Kernel ready · last saved automatically</footer>
+
+</div>
+
+</body>
+</html>
